@@ -10,8 +10,8 @@ class Header extends Component {
       <div>
       <nav>
     <div className="nav-wrapper container">
-      <a href="/" className="brand-logo left">
-        {this.context.login.displayName}
+      <a href="/" className="left brand-logo">
+     {this.context.login.displayName}
       </a>
       <ul id="nav-mobile" className="right">
         <li><a href="/auth/google">Login with <i className="fa fa-google-plus"></i> </a></li>
