@@ -10,13 +10,13 @@ class App extends Component {
 
   static contextType = UserContext;
 
-
   componentWillMount() {
     this.context.getUser();
     console.log(this.context.login)
   }
-  
+
   render() {
+
     return (
       <div className="App">
         <BrowserRouter>

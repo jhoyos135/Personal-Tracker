@@ -14,6 +14,7 @@ class GlobalState extends Component {
         this.setState({
             login: data
         });
+        
     };
 
     // componentWillUpdate(...nextState) {
@@ -25,7 +26,8 @@ class GlobalState extends Component {
         <UserContext.Provider 
             value={{
                 getUser: this.getUser,
-                login: this.state.login
+                login: this.state.login,
+                loginStat: this.state.loginStat
             }}
         >
             {this.props.children}
