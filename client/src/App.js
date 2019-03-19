@@ -1,30 +1,58 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import UserContext from './contex/user-context';
 
 import Header from './components/Header';
+import Database from './components/Database'
+import Dashboard from './components/Dashboard';
+import Landing from './components/Landing';
 
 import './App.css';
 
 class App extends Component {
 
-  static contextType = UserContext;
-
-  componentWillMount() {
+  componentDidMount() {
     this.context.getUser();
-    console.log(this.context.login)
   }
 
+  static contextType = UserContext;
+
+  isLoggedIn(){
+    if(this.context.login._id === undefined) {
+      return (
+        <BrowserRouter>
+        <div>
+
+        <Header />
+        <Route exact path='/' 
+        component={Landing} 
+        />
+        
+        </div>
+        </BrowserRouter>
+      )
+    } else {
+      return (
+        <BrowserRouter>
+        <div>
+
+        <Header />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/database" component={Database} />
+        <Route exact path="/" component={Landing} />
+
+        </div>
+        </BrowserRouter>
+      )
+    }
+  }
+  
   render() {
 
     return (
       <div className="App">
-        <BrowserRouter>
-
-        <Header />
-
-        </BrowserRouter>
-        <h4><em>App in development</em></h4>
+          {this.isLoggedIn()}
+          
       </div>
     );
   }

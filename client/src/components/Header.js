@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import UserContext from '../contex/user-context';
+import { Redirect , Link} from 'react-router-dom';
 
 class Header extends Component {
 
   static contextType = UserContext;
-
   
   renderContent() {
     switch(this.context.login._id) {
@@ -16,6 +16,7 @@ class Header extends Component {
               <i className="fa fa-google-plus" style={{marginLeft: '5px'}}></i> 
             </a>
           </li>
+          <Redirect to="/"/>
         </ul>
         )
 
@@ -23,12 +24,18 @@ class Header extends Component {
         return (
           
           <div>
-                  <a href="/" className="left brand-logo">
-                      {this.context.login.displayName}
-                  </a>
+              <Link to="/" className="left brand-logo">
+                  {this.context.login.displayName}
+              </Link>
             <ul id="nav-mobile" className="right">
                 <li>
                   <a href="/api/logout" onClick={this.logOut}>log out</a>
+                </li>
+                <li>
+                  <Link to="/database">Database</Link>
+                </li>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
                 </li>
             </ul>
           </div>
