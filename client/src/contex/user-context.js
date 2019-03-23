@@ -1,5 +1,7 @@
 import React from 'react';
 
 export default React.createContext({
-    getUser: () => {}
+    modal: false,
+    getUser: () => {},
+    postUser: () => {}
 });

@@ -16,6 +16,9 @@ class GlobalState extends Component {
         });
         
     };
+    postUser = async (values) => {
+        await axios.post('/api/customers', values);
+    }
 
     // componentWillUpdate(...nextState) {
     //     console.log(nextState[1])
@@ -26,8 +29,11 @@ class GlobalState extends Component {
         <UserContext.Provider 
             value={{
                 getUser: this.getUser,
+                postUser: this.postUser,
+                newCustomer: this.state.newCustomer,
                 login: this.state.login,
-                loginStat: this.state.loginStat
+                loginStat: this.state.loginStat,
+                storedata: this.storedata
             }}
         >
             {this.props.children}

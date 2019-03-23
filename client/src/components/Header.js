@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import UserContext from '../contex/user-context';
-import { Redirect , Link} from 'react-router-dom';
+import { Redirect , Link, Route} from 'react-router-dom';
+
 
 class Header extends Component {
 
   static contextType = UserContext;
+
   
   renderContent() {
     switch(this.context.login._id) {
@@ -12,11 +14,10 @@ class Header extends Component {
         return(
         <ul id="nav-mobile" className="right">
           <li>
-            <a href="/auth/google">Login with  
-              <i className="fa fa-google-plus" style={{marginLeft: '5px'}}></i> 
+            <a href="/auth/google"> Login with<i className="fa fa-google-plus" style={{marginLeft: '5px'}}></i>
             </a>
           </li>
-          <Redirect to="/"/>
+          {/* <Redirect to="/"/> */}
         </ul>
         )
 
