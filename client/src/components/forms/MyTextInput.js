@@ -8,7 +8,14 @@ const MyTextInput = (props) => {
         }
         return(
           <p>
-            <input type={props.type} value={props.value} name={props.name} onChange={handleChange} placeholder={props.placeholder}  />
+            <input 
+            type={props.type} 
+            value={props.value} 
+            name={props.name} 
+            onChange={handleChange} 
+            noValidate
+            placeholder={props.placeholder}
+            type={props.type}  />
           </p>
         )
       

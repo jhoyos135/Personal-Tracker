@@ -14,13 +14,14 @@
   "author": "Julian H.",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4",
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.4",
     "localtunnel": "^1.9.1",
     "mongoose": "^5.3.14",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "react-forms": "^1.0.0-rc6"
   }
 }
